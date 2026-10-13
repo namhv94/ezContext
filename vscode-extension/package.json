@@ -1,0 +1,66 @@
+{
+  "name": "ezlabs-context",
+  "displayName": "ezContext — AST Token Saver & 1-Click MCP Setup",
+  "description": "Cut AI context consumption by 85-95%. 1-Click MCP Server setup for Cline, Roo Code, and Claude assistants.",
+  "version": "0.1.0",
+  "publisher": "ezlabs",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "mcp",
+    "token saver",
+    "ast",
+    "cline",
+    "ai assistant",
+    "ezlabs"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ezcontext.setupMcp",
+        "title": "ezContext: 1-Click MCP Setup (Cline & Roo Code)",
+        "category": "ezContext"
+      },
+      {
+        "command": "ezcontext.copySkeleton",
+        "title": "ezContext: Copy Compact AI Skeleton to Clipboard",
+        "category": "ezContext"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "ezcontext.copySkeleton",
+          "group": "7_modification",
+          "when": "!explorerResourceIsFolder"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "ezcontext.copySkeleton",
+          "group": "7_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
