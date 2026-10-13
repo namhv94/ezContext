@@ -8,8 +8,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Rust 1.80+](https://img.shields.io/badge/rust-1.80%2B-orange.svg)](https://www.rust-lang.org/)
 [![MCP Spec](https://img.shields.io/badge/MCP-2024--11--05-cyan.svg)](https://modelcontextprotocol.io/)
-[![VS Code Integration](https://img.shields.io/badge/VS%20Code-Cline%20%26%20Roo%20Ready-007acc.svg)](https://code.visualstudio.com/)
-[![CI / Quality Gate](https://img.shields.io/badge/Clippy%20%26%20Fmt-Passing-emerald.svg)](https://github.com/namhv94/ezContext)
+[![CI](https://github.com/namhv94/ezContext/actions/workflows/ci.yml/badge.svg)](https://github.com/namhv94/ezContext/actions)
+[![VS Code Extension](https://img.shields.io/badge/VS%20Code-v0.1.0%20VSIX-007acc.svg)](https://github.com/namhv94/ezContext/releases)
 [![Product of EzLabs](https://img.shields.io/badge/Product%20of-EzLabs-0ea5e9.svg)](https://ezlabs.tech)
 
 [**Website**](https://ezlabs.tech) • [**ezRouter**](https://github.com/namhv94/ezRouter) • [**ezAgents**](https://github.com/namhv94/ezAgents) • [**ezEval**](https://github.com/namhv94/ezEval) • [**Issues**](https://github.com/namhv94/ezContext/issues)
@@ -169,11 +169,13 @@ ezcontext skeleton src/lib.rs
 
 ## 🔌 VS Code & AI Assistant Integration
 
-### Option A: 1-Click with ezContext VS Code Companion
-1. Open the `vscode-extension/` directory in VS Code.
-2. Run `npm install && npm run compile`.
-3. Press `F5` or install the extension.
-4. Click the status bar item: `$(zap) ezContext: Active` ➔ Automatically configures Cline and Roo Code!
+### Option A: Install ezContext VS Code Extension (.vsix)
+```bash
+# Install the packaged VSIX companion extension directly:
+code --install-extension vscode-extension/ezlabs-context-0.1.0.vsix
+```
+* Click the Status Bar HUD: `$(zap) ezContext: Active` ➔ Automatically writes MCP server configuration to Cline & Roo Code.
+* Or right-click any file in the Explorer ➔ Click *"Copy Compact AI Skeleton"* to paste directly to ChatGPT/Claude web.
 
 ### Option B: Manual JSON Configuration (Cline / Roo Code / Claude Desktop)
 Add `ezcontext` to your `cline_mcp_settings.json` or `claude_desktop_config.json`:
